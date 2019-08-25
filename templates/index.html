@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poster Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    
+</head>
+<body>
+    <section class="primary"> 
+        <div class="column-container">
+        <div class="image-container">
+            <img src="{{url}}" class="poster-image" id="poster">
+            <button id="Image-Button" class="button" onclick="getImageUrl()">Change Image</button>
+        </div>
+        <div class="quote-container">
+            <p class="quote" id="quote-text">{{quote}}</p>
+            <p class="author" id="author-text">-{{author}}</p>
+            <button id="Quote-Button" class="button" onclick="getQuote()">Change Quote</button>
+        </div>
+        </div>
+        <button class="merge-button" id="image-generator" onclick="draw()">Generate Poster</button>
+    </section>
+    <canvas id="poster-canvas" width="800px" height="600px"></canvas>
+    <a href="" id="download"></a>
+    <script src="{{ url_for('static',filename='main.js')}}"></script>
+</body>
+</html>
